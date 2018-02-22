@@ -1,5 +1,5 @@
 import psycopg2
-import psycopg2
+
 
 def question1():
 	conn = psycopg2.connect("dbname=news")
