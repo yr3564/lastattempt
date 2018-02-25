@@ -56,7 +56,6 @@ def creatview1():
 
 def createview2():
     conn = psycopg2.connect("dbname=news")
-
     cursor = conn.cursor()
     cursor.execute("create view t_requests as \
         select date(time), count(log.status)\
@@ -68,8 +67,6 @@ def createview2():
 
 def question3():
     conn = psycopg2.connect("dbname=news")
-
-
     print("")
     print("")
     print("On which days did more than '1%' \
