@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/catalog.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "catalog.css">
+</head>
+<body>	
+	<div class="container">
+		<div class="row mt-3 d-flex" id="navrow">
+			<div class="flex-fill"></div>
+			<div class="flex-fill d-flex justify-content-center"><h1>Catalog App</h1></div> 
+	        <div class="flex-fill d-inline-flex justify-content-end">
+	          <a href="{{url_for('gdisconnect')}}", class="btn btn-secondary btn-lg active light text-info " id="logout" role="button" aria-pressed="true">Logout</a>
+	        </div>	     	     
+        </div>
+		<div class="row shadow p-3 mt-5 mb-5 bg-white">			
+			<div class="col border pb-5" id="left-pane">
+				<h2 class="text-secondary">Sport Categories</h2>		
+				{% for sport in sports1 %}
+					<a href="{{url_for('selectCategory',category_id = sport.id)}}" class="text-info">	
+						<h4>{{sport.name}}</h4>
+						<a href="{{url_for('addItem')}}" class="text-info">ADD ITEM</a>
+					</a>
+					<hr>				
+				{% endfor %}
+			</div>
+			<div class="col border pb-5" id="right-pane">
+				<h2 class="text-secondary">Items</h2>
+					{% for sport_item in sport_items %}
+						<a href="{{url_for('itemDescription',sportItem_id = sport_item.id)}}" class="text-info">
+							<h4>{{sport_item.name}}</h4>
+						</a>
+						<a href="{{url_for('editItem',sportItem_id = sport_item.id)}}" class="text-info">Edit </a>
+						<a href="{{url_for('deletedItem',sportItem_id = sport_item.id)}}" class="text-info">  Delete</a>
+						<hr>
+					{% endfor%}
+			</div>		
+		</div>	
+	</div>
+</body>
+</html>

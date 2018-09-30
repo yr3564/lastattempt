@@ -1,0 +1,38 @@
+body{
+	background-color:#255C69; 
+}
+#navrow{
+	background-color: #aa7139;
+}
+#logout{
+	background-color: #0A1315;
+}
+#login{
+	background-color: #0A1315;
+}
+#alert{
+	background-color: #C4C4C4;
+}
+#left-pane{
+	background-color: #C4C4C4;
+}
+#right-pane{
+	background-color: #C4C4C4;
+}
+.btn{
+	border-radius: 0px;
+}
+#formdiv{
+	background-color: #CBD3D4;
+}
+#description{
+	background-color: #C4C4C4;
+}
+#deletepane{
+	background-color: #C4C4C4;
+}
+p{
+	
+	text-align: center;
+}
+

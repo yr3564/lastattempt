@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/catalog.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "catalog.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row mt-3 d-flex" id="navrow">
+      <div class="flex-fill"></div>
+      <div class="flex-fill d-flex justify-content-center"><h1>Add Item Form</h1></div> 
+          <div class="flex-fill d-inline-flex justify-content-end">
+            <a href="{{url_for('gdisconnect')}}", class="btn btn-secondary btn-lg active light text-info " id="logout" role="button" aria-pressed="true">Logout</a>
+          </div>             
+        </div>
+      <div class="row mt-3">
+      <div class="col-2"></div>
+      <div class="col border shadow p-3 mb-5 mt-5" id="formdiv">
+        <form action="{{url_for('addItem')}}" method = 'POST'>
+         	<div class="item-input">
+            	<label for="formGroupExampleInput">Item Name: </label>
+            	<input type="text" class="form-control" id="item-input" name="name" placeholder="Item Name">
+        	</div>
+            <div class="form-group">
+            	<label for="item-description">Item Description: </label>
+            	<input type="text" class="form-control" id="item-description" name="description" placeholder="Description">
+          	</div>
+        	<div class="form-group">
+            	<label for="category-selection">Select Sport: </label>
+            	<select class="form-control" id="category-selection" name="Sport">
+              		<option value="#">Select Sport</option>
+              		<option value="3">Baseball</option>
+              		<option value="4">Tennis</option>      
+            	</select>
+         	</div>
+         	<button type="submit" class="btn btn-secondary text-info">Add</button>
+          <button type="submit" class="btn btn-secondary text-info" formaction="{{url_for('showCategory')}}" value="Cancel">Cancel</button>         
+        </form>
+      </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+

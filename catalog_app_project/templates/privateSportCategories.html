@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<h1>Categories</h1>
+		{% for sport in sports %}
+		<a href="{{url_for('selectCategory',category_id = sport.id)}}">			
+		<h3>{{sport.name}}</h3>
+			
+		<h3>{{sport.id}}</h3>
+		</a>			
+		{% endfor %}
+	<h1>Latest Items</h1>
+	{% for l in latest_items %}
+		<a href="{{url_for('itemDescription',sportItem_id = l.id)}}">
+		<h3>{{l.name}}</h3>
+		<h3>{{l.id}}</h3>
+	</a>
+	{% endfor %}
+
+</body>
+
+</html>
